@@ -7,17 +7,4 @@
 
 %table.table.table-bordered.calendar
   %thead
-    %tr
-      %th.calendar__weekday 日曜日
-      %th.calendar__weekday 月曜日
-      %th.calendar__weekday 火曜日
-      %th.calendar__weekday 水曜日
-      %th.calendar__weekday 木曜日
-      %th.calendar__weekday 金曜日
-      %th.calendar__weekday 土曜日
   %tbody
-    - date_range.each_slice(7).each do |week|
-      %tr
-        - week.each do |date|
-          %td{class: base_date.month == date.month ? 'calendar__date' : 'calendar__out-of-date'}
-            = date.day

@@ -70,3 +70,4 @@ group :development, :test do
   gem 'spring-commands-rspec'
 end
 
+gem 'momentjs-rails'
