@@ -20,7 +20,7 @@ Display =
     html = "<tr class=\"calendar__week-#{week}\"></tr>"
     $("tbody").append html
   appendDate: (date, week, class_name)->
-    html = "<td class=\"#{class_name}\">#{date.format('YYYY/M/D')}</td>"
+    html = "<td class=\"#{class_name}\">#{date.format('D')}</td>"
     $("tr.calendar__week-#{week}").append html
   append_calendar: (base_date) ->
     start_date = moment(base_date).startOf("month").day(0)
