@@ -1,4 +1,7 @@
 Display =
+  setTitle: (date)->
+    title = "#{date.format('YYYY')}年#{date.format('M')}月のカレンダー"
+    $("h2.title").text title
   appendTable: ->
     html = """
 <table class=\"table table-bordered\">
@@ -24,16 +27,16 @@ Display =
     end_date = moment(base_date).endOf("month").day(6)
     total_days = end_date.diff(start_date,"days")
     weekdays = ["日曜日","月曜日","火曜日","水曜日","木曜日","金曜日","土曜日"] 
-  
-    $("div.calendar").empty()
+    date = moment(start_date)
 
+    $("div.calendar").empty()
+    Display.setTitle(base_date)
     Display.appendTable()
     Display.appendWeekdayHeader()
   
     for weekday, index in weekdays
       Display.appendWeekday(weekday)
   
-    date = moment(start_date)
     for i in [0..total_days]
       week_num = (i // 7) + 1
       Display.appendWeek(week_num) if i % 7 == 0
