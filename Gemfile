@@ -71,3 +71,4 @@ group :development, :test do
 end
 
 gem 'momentjs-rails'
+gem 'react-rails', '~> 1.0'
