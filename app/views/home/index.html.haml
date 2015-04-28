@@ -1,8 +1,8 @@
 :ruby
   base_date = Date.current
-  Date.beginning_of_week = :sunday
-  date_range = base_date.beginning_of_month.beginning_of_week..base_date.end_of_month.end_of_week
 
-%h2 #{base_date.month}月のカレンダー
+%h2 #{base_date.year}年#{base_date.month}月のカレンダー
+%button.btn.btn-default.prev{:type => "button"} <
+%button.btn.btn-default.next{:type => "button"} >
 
-.calendar
+.calendar{data: {year: base_date.year, month: base_date.month}, year: base_date.year, month: base_date.month}
